@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{C31D3CC5-F417-46EC-A5DF-AFC6928B9FBE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ZohoApi</RootNamespace>
+    <AssemblyName>ZohoApi</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE;TEST</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NUnit.Framework">
+      <HintPath>$(SharpDevelopBinPath)\Tools\NUnit\NUnit.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ZohoAccounts.cs" />
+    <Compile Include="Classes\ZohoBaseModule.cs" />
+    <Compile Include="Classes\ZohoCalls.cs" />
+    <Compile Include="Classes\ZohoCampaigns.cs" />
+    <Compile Include="Classes\ZohoCases.cs" />
+    <Compile Include="Classes\ZohoContacts.cs" />
+    <Compile Include="Classes\ZohoInvoices.cs" />
+    <Compile Include="Classes\ZohoLeads.cs" />
+    <Compile Include="Classes\ZohoNotes.cs" />
+    <Compile Include="Classes\ZohoPotentials.cs" />
+    <Compile Include="Classes\ZohoPriceBooks.cs" />
+    <Compile Include="Classes\ZohoProducts.cs" />
+    <Compile Include="Classes\ZohoPurchaseOrders.cs" />
+    <Compile Include="Classes\ZohoQuotes.cs" />
+    <Compile Include="Classes\ZohoSalesOrders.cs" />
+    <Compile Include="Classes\ZohoSolutions.cs" />
+    <Compile Include="Classes\ZohoStandardFieldInterface.cs" />
+    <Compile Include="Classes\ZohoTasks.cs" />
+    <Compile Include="Classes\ZohoVendors.cs" />
+    <Compile Include="MyClass.cs" />
+    <Compile Include="Poster\ZohoPoster.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\XmlDataTests.cs" />
+    <Compile Include="Tests\ZohoClassesTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes" />
+    <Folder Include="Enums" />
+    <Folder Include="Poster" />
+    <Folder Include="Tests" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>
